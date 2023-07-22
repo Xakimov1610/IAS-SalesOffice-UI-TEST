@@ -153,6 +153,34 @@ public partial class SalesOfficeTests
 
 	#endregion
 
+	#region OSGOVTS Test Paths
+
+	private readonly By _createDealButtonPath = By.XPath("/html/body/nav/div/ul/div[1]/li");
+    private readonly By _osgovtsButtonPath = By.XPath("/html/body/nav/div/ul/div[1]/div/a[2]");
+    private readonly By _gosNumberPath = By.XPath("/html/body/div[6]/div[3]/div[1]/div[1]/div[1]/div/div[1]/div[1]/div[2]/div/div/div[1]/input");
+    private readonly By _techPassSerPath = By.XPath("/html/body/div[6]/div[3]/div[1]/div[1]/div[1]/div/div[1]/div[1]/div[2]/div/div/div[2]/div/input");
+    private readonly By _techPassNumPath = By.XPath("/html/body/div[6]/div[3]/div[1]/div[1]/div[1]/div/div[1]/div[1]/div[2]/div/div/div[3]/div/input");
+    private readonly By _searchButtonPath = By.XPath("/html/body/div[6]/div[3]/div[1]/div[1]/div[1]/div/div[1]/div[1]/div[2]/div/div/button[1]");
+    private readonly By _nextButtonPath = By.XPath("/html/body/div[6]/div[3]/div[1]/div[1]/div[2]/div[2]/button[2]");
+    private readonly By _addButtonPath = By.XPath("/html/body/div[6]/div[3]/div[1]/div[1]/div[1]/div/div[2]/div/div[2]/div/button[2]");
+    private readonly By _dateOfBirthPath = By.XPath("/html/body/div[6]/div[3]/div[1]/div[1]/div[1]/div/div[2]/div/div[2]/div[1]/div[1]/div[1]/input[2]");
+    private readonly By _passportSerPath = By.XPath("/html/body/div[6]/div[3]/div[1]/div[1]/div[1]/div/div[2]/div/div[2]/div[1]/div[1]/div[2]/div/input[1]");
+    private readonly By _passportNumPath = By.XPath("/html/body/div[6]/div[3]/div[1]/div[1]/div[1]/div/div[2]/div/div[2]/div[1]/div[1]/div[2]/div/input[2]");
+    private readonly By _pinflPath = By.XPath("/html/body/div[6]/div[3]/div[1]/div[1]/div[1]/div/div[2]/div/div[2]/div[1]/div[1]/div[3]/input");
+    private readonly By _generateInvoicePath = By.XPath("/html/body/div[6]/div[3]/div[1]/div[1]/div[1]/div/div[3]/div[1]/div[2]/div/button");
+    private readonly By _createInvoicePath = By.XPath("/html/body/div[6]/div[3]/div[1]/div[1]/div[1]/div/div[3]/div[4]/div/div/div[3]/button[1]");
+    private readonly By _actionButtonPath = By.XPath("/html/body/div[6]/div[3]/div[1]/div[1]/div[1]/div/div[3]/div[1]/div[2]/table/tbody/tr/td[7]/div/div");
+    private readonly By _payButtonPath = By.XPath("/html/body/div[6]/div[3]/div[1]/div[1]/div[1]/div/div[3]/div[1]/div[2]/table/tbody/tr/td[7]/div/div/div/a[4]");
+    private readonly By _bankConPayButtonPath = By.XPath("/html/body/div[6]/div[3]/div[1]/div[1]/div[1]/div/div[3]/div[3]/div/div/div/ul/a[1]");
+    private readonly By _setPayedButtonPath = By.XPath("/html/body/div[6]/div[3]/div[1]/div[1]/div[1]/div/div[3]/div[3]/div/div/div[3]/button[1]");
+    private readonly By _osgovtsCloseButtonPath = By.XPath("/html/body/div[6]/div[3]/div[1]/div[1]/div[1]/div/div[3]/div[3]/div/div/div[3]/button[2]");
+    private readonly By _dealButtonPath = By.XPath("/html/body/div[4]/div[2]/ul/li[3]/ul/li[1]/a");
+    private readonly By _dealActionButtonPath = By.XPath("/html/body/div[6]/div[3]/div[1]/div[1]/div/div/div[2]/div[1]/div[2]/table/tbody/tr[1]/td[17]/div/div");
+    private readonly By _dealViewButtonPath = By.XPath("/html/body/div[6]/div[3]/div[1]/div[1]/div/div/div[2]/div[1]/div[2]/table/tbody/tr[1]/td[17]/div/div/div/a[1]");
+    private readonly By _dashboardButtonPath = By.XPath("/html/body/div[4]/div[2]/ul/li[2]/a/span");
+
+	#endregion
+
 
 	#region Const Values
 
@@ -172,6 +200,13 @@ public partial class SalesOfficeTests
 	private const string _travelDateBirth = "20.04.1989";
 	private const string _travelPassSeria = "AB";
 	private const string _travelPassNumber = "0662147";
+	
+	private const string _gosnumber = "01978KHA";
+	private const string _techpasser = "AAF";
+	private const string _techpassnumber = "2380903";
+	private const string _dateOfBirth = "24.04.2003";
+	private const string _passportSer = "AC";
+	private const string _passportNum = "1871799";
 
 
 	#endregion
