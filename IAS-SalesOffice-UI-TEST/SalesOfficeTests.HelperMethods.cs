@@ -12,7 +12,7 @@ public partial class SalesOfficeTests
         await SendKey(_usernamePath, _username);
         await SendKey(_passwordPath, _password);
         await Click(_signInButtonPath);
-        await Task.Delay(TimeSpan.FromSeconds(4));
+        await Task.Delay(TimeSpan.FromSeconds(7));
 
         //SendKey(wait, _selectSellerInputPath, _sellerName);
         //Click(wait, _selectSellerPath);

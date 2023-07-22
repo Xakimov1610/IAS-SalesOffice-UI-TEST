@@ -158,34 +158,33 @@ public partial class SalesOfficeTests
 	public SalesOfficeTests()
 	{
 		edgeDriver = new EdgeDriver();
-		wait = new WebDriverWait(edgeDriver, TimeSpan.FromSeconds(_waitingSecond));
-		//DownloadPortfolioTest();
+		wait = new WebDriverWait(edgeDriver, TimeSpan.FromSeconds(120));
 	}
 
-	public async Task RunMultiTab(int tabCount)
+	// public async Task RunMultiTab(int tabCount)
+	// {
+	// 	for (int i = 1; i <= tabCount; i++)
+	// 	{
+	// 		((IJavaScriptExecutor)edgeDriver).ExecuteScript("window.open();");
+	// 	}
+	//
+	// 	List<Task> tasks = new();
+	// 	foreach (var handle in edgeDriver.WindowHandles)
+	// 	{
+	// 		tasks.Add(RunTests(handle));
+	// 	}
+	//
+	// 	await Task.WhenAll(tasks);
+	// }
+
+	public async Task RunTests()
 	{
-		for (int i = 1; i <= tabCount; i++)
-		{
-			((IJavaScriptExecutor)edgeDriver).ExecuteScript("window.open();");
-		}
-
-		List<Task> tasks = new();
-		foreach (var handle in edgeDriver.WindowHandles)
-		{
-			tasks.Add(RunTests(handle));
-		}
-
-		await Task.WhenAll(tasks);
-	}
-
-	public async Task RunTests(string handle)
-	{
-		edgeDriver.SwitchTo().Window(handle);
-		await DownloadPortfolioTest();
+		//edgeDriver.SwitchTo().Window(handle);
 		await InvoiceTest();
+		await TravelTest();
+		await DownloadPortfolioTest();
 		await PaymentTest();
 		await PolicyTest();
-		await TravelTest();
 		await Task.Delay(_mediumDelay);
 	}
 }

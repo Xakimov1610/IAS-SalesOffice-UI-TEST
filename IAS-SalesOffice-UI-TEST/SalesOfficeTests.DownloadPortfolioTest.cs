@@ -6,9 +6,9 @@ public partial class SalesOfficeTests
     {
         try
         {
-            await SignInToSystem(_siteUrl);
-
-            Thread.Sleep(4000);
+            // await SignInToSystem(_siteUrl);
+            //
+            // Thread.Sleep(4000);
 
             await Click(_menuSalesFolderPath);
             await Click(_menuSalesPath);

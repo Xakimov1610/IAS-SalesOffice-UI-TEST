@@ -2,10 +2,15 @@
 
 try
 {
-	Console.WriteLine("started");
 	var test = new SalesOfficeTests();
-	test.RunMultiTab(3);
-	Console.WriteLine("finished");
+	await test.SignInToSystem("https://sales.aic.uz/");
+
+	while (true)
+	{
+		Console.WriteLine("started");
+		await test.RunTests();
+		Console.WriteLine("finished");
+	}
 }
 catch (Exception ex)
 {
