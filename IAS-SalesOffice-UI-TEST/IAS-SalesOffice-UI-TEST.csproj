@@ -1,0 +1,18 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net6.0</TargetFramework>
+    <RootNamespace>IAS_SalesOffice_UI_TEST</RootNamespace>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+	<ItemGroup>
+		<PackageReference Include="DotNetSeleniumExtras.WaitHelpers" Version="3.11.0" />
+		<PackageReference Include="Selenium.Chrome.WebDriver" Version="85.0.0" />
+		<PackageReference Include="Selenium.WebDriver" Version="4.10.0" />
+		<PackageReference Include="Selenium.WebDriver.MSEdgeDriver" Version="114.0.1823.58" />
+	</ItemGroup>
+
+</Project>
