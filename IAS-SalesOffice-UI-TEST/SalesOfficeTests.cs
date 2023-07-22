@@ -23,15 +23,33 @@ public partial class SalesOfficeTests
 
 	#endregion
 
+	#region All PageLoader Test Paths
+	
+	private readonly By _allMenuSales_Path = By.XPath("/html/body/div[4]/div[2]/ul/li[3]/a/span");
+	private readonly By _allDeals_Path = By.XPath("/html/body/div[4]/div[2]/ul/li[3]/ul/li[1]/a");
+	private readonly By _allInvoice_Path = By.XPath("/html/body/div[4]/div[2]/ul/li[3]/ul/li[2]/a");
+	private readonly By _allPayments_Path = By.XPath("/html/body/div[4]/div[2]/ul/li[3]/ul/li[3]/a");
+	private readonly By _allBankPayment_Path = By.XPath("/html/body/div[4]/div[2]/ul/li[3]/ul/li[4]/a");
+	private readonly By _allPolicies_Path = By.XPath("/html/body/div[4]/div[2]/ul/li[3]/ul/li[5]/a");
+	private readonly By _allMenuProducts_Path = By.XPath("/html/body/div[4]/div[2]/ul/li[4]/a");
+	private readonly By _allMenuBsr_Path = By.XPath("/html/body/div[4]/div[2]/ul/li[5]/a");
+	private readonly By _allMenuSallerUsers_Path = By.XPath("/html/body/div[4]/div[2]/ul/li[6]/a");
+	private readonly By _allMenuNumberBuking_Path = By.XPath("/html/body/div[4]/div[2]/ul/li[7]/a");
+	private readonly By _allMenueReissue_Path = By.XPath("/html/body/div[4]/div[2]/ul/li[8]/a");
+	private readonly By _allMenueDashbord_Path = By.XPath("/html/body/div[4]/div[2]/ul/li[2]/a");
+	
+
+	#endregion
+
 	#region Download Portfolo Test Paths
 	
 	private readonly By _menuSalesFolderPath = By.XPath("//*[@id=\"main-menu-navigation\"]/li[3]/a");
 	private readonly By _menuSalesPath = By.XPath("//*[@id=\"main-menu-navigation\"]/li[3]/ul/li[1]/a");
 
 	private readonly By _downloadPortfolioButtonPath = By.XPath("/html/body/div[6]/div[3]/div[1]/div[1]/div/div/div[1]/div/div[2]/div[2]/button[2]");
-	private readonly By _startDateInputPath = By.XPath("/html/body/div[6]/div[3]/div[1]/div[6]/div/div/div[2]/input[2]");
-	private readonly By _startDateSelectorPath = By.XPath("//*[@id=\"menu-exp\"]/div[7]/div[2]/div/div[2]/div/span[6]");
-	private readonly By _downloadButtonPath = By.XPath("/html/body/div[6]/div[3]/div[1]/div[6]/div/div/div[3]/button[2]");
+	private readonly By _startDateInputPath = By.XPath("/html/body/div[6]/div[3]/div[1]/div[7]/div/div/div[2]/input[2]");
+	private readonly By _startDateSelectorPath = By.XPath("/html/body/div[7]/div[2]/div/div[2]/div/span[6]");
+	private readonly By _downloadButtonPath = By.XPath("/html/body/div[6]/div[3]/div[1]/div[7]/div/div/div[3]/button[2]");
 	#endregion
 
 	#region Invoive Test Paths
@@ -184,15 +202,15 @@ public partial class SalesOfficeTests
 
 	#region Const Values
 
-	//private const string _username = "oakrom";
-	//private const string _password = "123456";
+	private const string _username = "oakrom";
+	private const string _password = "159753";
 	private const string _siteUrl = "https://sales.aic.uz";
 	private const int _waitingSecond = 20;
 	private const int _shortDelay = 4000;
 	private const int _mediumDelay = 8000;
 	private const int _longDelay = 10000;
-	private const string _username = "n.xakimov";
-	private const string _password = "654321";
+	// private const string _username = "n.xakimov";
+	// private const string _password = "654321";
 	private const string _sellerName = "Head office";
 	private const string _statusAction = "Closed";
 	private const string _country = "TURKEY";
@@ -235,12 +253,16 @@ public partial class SalesOfficeTests
 
 	public async Task RunTests()
 	{
-		await InvoiceTest();
-		await TravelTest();
-		await DownloadPortfolioTest();
-		await PaymentTest();
-		await PolicyTest();
-		await BSRTest();
+		// await InvoiceTest();
+		// await TravelTest();
+		//await DownloadPortfolioTest();
+		await AllPageLoadTest();
+		// await InvoiceTest();
+		// await TravelTest();
+		// await BSRTest();
+		// await PaymentTest();
+		// await PolicyTest();
+		
 		await Task.Delay(_mediumDelay);
 	}
 }

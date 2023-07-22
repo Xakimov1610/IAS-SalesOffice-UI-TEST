@@ -36,8 +36,7 @@ public partial class SalesOfficeTests
         await Task.Delay(TimeSpan.FromSeconds(8));
         await Click(_searchNumberPayment);
         await Task.Delay(TimeSpan.FromSeconds(3));
-        await SendKey(_searchInputPayment, valueSearch);
-
+        
         if (valueSearch is not null)
             await SendKey(_searchInputPayment, valueSearch);
         else
