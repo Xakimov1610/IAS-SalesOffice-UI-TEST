@@ -14,50 +14,50 @@ public partial class SalesOfficeTests
     {
         //var wait = SignInToSystem("https://sales.aic.uz", 20);
 
-        // Click(wait, _menuSalesFolderPath);
-        //
-        // Click(wait, _menuPoliciesPath);
-        // Thread.Sleep(4000);
-        //
-        // SetStringValue(wait, _globalSearchInputPath, "EAPL");
-        // Click(wait, _globalSearchButtonPath);
-        // Thread.Sleep(3000);
-        // Click(wait, _globalSearchDropdownPath);
-        // Click(wait, _policyStatusButtonDropdownPath);
-        // SetStringValue(wait, _globalSearchInputPath, "Active");
-        // Click(wait, _globalSearchButtonPath);
-        // Thread.Sleep(3000);
-        //
-        // Click(wait, _policyDropdownButtonPath);
-        // Click(wait, _policyViewButtonPath);
-        // Thread.Sleep(2000);
-        // Click(wait, _policyModalCloseButtonPath);
-        // Click(wait, _policyDropdownButtonPath);
-        // Click(wait, _policyGoToDealButtonPath);
-        // Thread.Sleep(3000);
-        //
-        // Click(wait, _policyDealEditButtonPath);
-        // Thread.Sleep(3000);
-        // Click(wait, _policyDealNextButtonPath);
-        // Thread.Sleep(3000);
-        // Click(wait, _policyDealNextButtonPath);
-        // Thread.Sleep(3000);
-        // Click(wait, _policyDealPreviousButtonPath);
-        // Thread.Sleep(3000);
-        // Click(wait, _policyDealNextButtonPath);
-        // Thread.Sleep(3000);
-        // Click(wait, _policyDealPaymentDropdownPath);
-        // Click(wait, _policyDealPaymentDropdownPrintOrderButtonPath);
-        // Thread.Sleep(2000);
-        // for (int i = 0; i < 3; i++)
-        // {
-        //     Click(wait, _policyDealPaymentPrintButtonModalPath);
-        //     Thread.Sleep(3000);
-        // }
-        // Click(wait, _policyDealPaymentCloseButtonModalPath);
-        // Click(wait, _policyDealNextButtonPath);
-        // Thread.Sleep(3000);
-        // Click(wait, _policyDealFinishButtonPath);
-        // Thread.Sleep(4000);
+        await Click(_menuSalesFolderPath);
+        
+        await Click(_menuPoliciesPath);
+        await Task.Delay(4000);
+        
+        await SendKey(_globalSearchInputPath, "EAPL");
+        await Click(_globalSearchButtonPath);
+        await Task.Delay(3000);
+        await Click(_globalSearchDropdownPath);
+        await Click(_policyStatusButtonDropdownPath);
+        await SendKey(_globalSearchInputPath, "Active");
+        await Click(_globalSearchButtonPath);
+        await Task.Delay(3000);
+        
+        await Click(_policyDropdownButtonPath);
+        await Click(_policyViewButtonPath);
+        await Task.Delay(2000);
+        await Click(_policyModalCloseButtonPath);
+        await Click(_policyDropdownButtonPath);
+        await Click(_policyGoToDealButtonPath);
+        await Task.Delay(3000);
+        
+        await Click(_policyDealEditButtonPath);
+        await Task.Delay(3000);
+        await Click(_policyDealNextButtonPath);
+        await Task.Delay(3000);
+        await Click(_policyDealNextButtonPath);
+        await Task.Delay(3000);
+        await Click(_policyDealPreviousButtonPath);
+        await Task.Delay(3000);
+        await Click(_policyDealNextButtonPath);
+        await Task.Delay(3000);
+        await Click(_policyDealPaymentDropdownPath);
+        await Click(_policyDealPaymentDropdownPrintOrderButtonPath);
+        await Task.Delay(2000);
+        for (int i = 0; i < 3; i++)
+        {
+            Click(_policyDealPaymentPrintButtonModalPath);
+            await Task.Delay(3000);
+        }
+        await Click(_policyDealPaymentCloseButtonModalPath);
+        await Click(_policyDealNextButtonPath);
+        await Task.Delay(3000);
+        await Click(_policyDealFinishButtonPath);
+        await Task.Delay(4000);
     }
 }

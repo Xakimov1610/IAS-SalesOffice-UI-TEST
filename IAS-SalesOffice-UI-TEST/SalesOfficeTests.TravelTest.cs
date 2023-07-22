@@ -16,7 +16,7 @@ public partial class SalesOfficeTests
     {
         //await SignInToSystem(_siteUrl);
 
-        // await Click(_menuInvoicePath);
+        // await Await Click(_menuInvoicePath);
         // await Task.Delay(TimeSpan.FromSeconds(4));
         // await SendKey(_searchActionInvoice, _statusAction);
         // await Task.Delay(TimeSpan.FromSeconds(2));

@@ -16,75 +16,75 @@ public partial class SalesOfficeTests
     {
         
       //   var wait = SignInToSystem("https://sales.aic.uz", 20);
-      // Click(wait, _menuSalesFolderPath);
+      await Click(_menuSalesFolderPath);
 
-      // Click(_menuPaymentsPath);
-      // Thread.Sleep(5000);
-      //
-      // Click(wait, _dropdownButtonPath);
-      // Click(wait, _paymentViewButtonPath);
-      //
-      // Thread.Sleep(3000);
-      //
-      // Click(wait, _modalXButtonPath);
-      // Click(wait, _dropdownButtonPath);
-      // Click(wait, _goToDealButtonPath);
-      // Thread.Sleep(3000);
-      // Click(wait, _menuPaymentsPath);
-      //
-      // Thread.Sleep(5000);
-      //
-      // Click(wait, _globalSearchDropdownPath);
-      // Click(wait, _globalSearchSumColumnPath);
-      //
-      // SendKey(wait, _globalSearchInputPath, "56,000.00");
-      // Click(wait, _globalSearchButtonPath);
-      // Thread.Sleep(3000);
-      //
-      // Click(wait, _dropdownButtonPath);
-      // Click(wait, _paymentViewButtonPath);
-      //
-      // Thread.Sleep(3000);
-      //
-      // Click(wait, _modalXButtonPath);
-      //
-      // Click(wait, _globalFilterButtonPath);
-      // Click(wait, _invoicedRadioButtonPath);
-      // Click(wait, _startDateInputPeriodModalPath);
-      // Click(wait, _startDateValuePath);
-      // Click(wait, _periodButtonOnModalPath);
-      //
-      // Thread.Sleep(4000);
-      //
-      //
-      // Click(wait, _dropdownButtonPath);
-      // Click(wait, _paymentViewButtonPath);
-      //
-      // Thread.Sleep(3000);
-      //
-      // Click(wait, _modalXButtonPath);
-      // Click(wait, _dropdownButtonPath);
-      // Click(wait, _goToDealButtonPath);
-      // Thread.Sleep(5000);
-      //
-      // Click(wait, _paymentDealDropdownPath);
-      // Click(wait, _paymentDealDropdownDetailsButtonPath);
-      // Thread.Sleep(5000);
-      //
-      // Click(wait, _paymentDealObjectNextButtonPath);
-      // Thread.Sleep(5000);
-      // Click(wait, _paymentDealContractStepButtonPath);
-      // Thread.Sleep(5000);
-      // Click(wait, _paymentDealObjectNextButtonPath);
-      // Thread.Sleep(5000);
-      // Click(wait, _paymentDealPreviousButtonPath);
-      // Thread.Sleep(5000);
-      // Click(wait, _paymentDealPreviousButtonPath);
-      // Thread.Sleep(5000);
-      // Click(wait, _paymentDealPaymentStepButtonPath);
-      // Thread.Sleep(5000);
-      // Click(wait, _paymentDealObjectNextButtonPath);
-      // Thread.Sleep(5000);
+      await Click(_menuPaymentsPath);
+      await Task.Delay(5000);
+      
+      await Click(_dropdownButtonPath);
+      await Click(_paymentViewButtonPath);
+      
+      await Task.Delay(3000);
+      
+      await Click(_modalXButtonPath);
+      await Click(_dropdownButtonPath);
+      await Click(_goToDealButtonPath);
+      await Task.Delay(3000);
+      await Click(_menuPaymentsPath);
+      
+      await Task.Delay(5000);
+      
+      await Click(_globalSearchDropdownPath);
+      await Click(_globalSearchSumColumnPath);
+      
+      await SendKey(_globalSearchInputPath, "56,000.00");
+      await Click(_globalSearchButtonPath);
+      await Task.Delay(3000);
+      
+      await Click(_dropdownButtonPath);
+      await Click(_paymentViewButtonPath);
+      
+      await Task.Delay(3000);
+      
+      await Click(_modalXButtonPath);
+      
+      await Click(_globalFilterButtonPath);
+      await Click(_invoicedRadioButtonPath);
+      await Click(_startDateInputPeriodModalPath);
+      await Click(_startDateValuePath);
+      await Click(_periodButtonOnModalPath);
+      
+      await Task.Delay(4000);
+      
+      
+      await Click(_dropdownButtonPath);
+      await Click(_paymentViewButtonPath);
+      
+      await Task.Delay(3000);
+      
+      await Click(_modalXButtonPath);
+      await Click(_dropdownButtonPath);
+      await Click(_goToDealButtonPath);
+      await Task.Delay(5000);
+      
+      await Click(_paymentDealDropdownPath);
+      await Click(_paymentDealDropdownDetailsButtonPath);
+      await Task.Delay(5000);
+      
+      await Click(_paymentDealObjectNextButtonPath);
+      await Task.Delay(5000);
+      await Click(_paymentDealContractStepButtonPath);
+      await Task.Delay(5000);
+      await Click(_paymentDealObjectNextButtonPath);
+      await Task.Delay(5000);
+      await Click(_paymentDealPreviousButtonPath);
+      await Task.Delay(5000);
+      await Click(_paymentDealPreviousButtonPath);
+      await Task.Delay(5000);
+      await Click(_paymentDealPaymentStepButtonPath);
+      await Task.Delay(5000);
+      await Click(_paymentDealObjectNextButtonPath);
+      await Task.Delay(5000);
         
     }
 }
