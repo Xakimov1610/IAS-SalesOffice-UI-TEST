@@ -6,7 +6,7 @@ using System.Threading;
 
 namespace IAS_SalesOffice_UI_TEST;
 
-public class SalesOfficeTest
+public partial class SalesOfficeTests
 {
 	private IWebDriver edgeDriver;
 	private WebDriverWait wait;
@@ -75,7 +75,7 @@ public class SalesOfficeTest
 
 	#endregion
 
-	public SalesOfficeTest()
+	public SalesOfficeTests()
 	{
 		edgeDriver = new EdgeDriver();
 		wait = new WebDriverWait(edgeDriver, TimeSpan.FromSeconds(_waitingSecond));
