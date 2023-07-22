@@ -64,6 +64,9 @@ public class SalesOfficeTest
 	//private const string _password = "123456";
 	private const string _siteUrl = "https://sales.aic.uz";
 	private const int _waitingSecond = 20;
+	private const int _shortDelay = 4000;
+	private const int _mediumDelay = 8000;
+	private const int _longDelay = 10000;
 	private const string _username = "n.xakimov";
 	private const string _password = "654321";
 	private const string _sellerName = "Head office";
@@ -76,10 +79,34 @@ public class SalesOfficeTest
 	{
 		edgeDriver = new EdgeDriver();
 		wait = new WebDriverWait(edgeDriver, TimeSpan.FromSeconds(_waitingSecond));
-		DownloadPortfolioTest();
+		//DownloadPortfolioTest();
 	}
 
-	public async void DownloadPortfolioTest()
+	public async Task RunMultiTab(int tabCount)
+	{
+		for (int i = 1; i <= tabCount; i++)
+		{
+			((IJavaScriptExecutor)edgeDriver).ExecuteScript("window.open();");
+		}
+
+		List<Task> tasks = new();
+		foreach (var handle in edgeDriver.WindowHandles)
+		{
+			tasks.Add(RunTests(handle));
+		}
+
+		await Task.WhenAll(tasks);
+	}
+
+	public async Task RunTests(string handle)
+	{
+		edgeDriver.SwitchTo().Window(handle);
+		await DownloadPortfolioTest();
+		await InvoiceTest();
+		await Task.Delay(_mediumDelay);
+	}
+
+	public async Task DownloadPortfolioTest()
 	{
 		try
 		{
@@ -112,41 +139,41 @@ public class SalesOfficeTest
 		//await SignInToSystem(_siteUrl);
 
 		await Click(_menuInvoicePath);
-		Thread.Sleep(4000);
+		await Task.Delay(TimeSpan.FromSeconds(4));
 		await SendKey(_searchActionInvoice, _statusAction);
-		Thread.Sleep(2000);
+		await Task.Delay(TimeSpan.FromSeconds(2));
 
 		await Click(_searchClickInvoice);
-		Thread.Sleep(4000);
+		await Task.Delay(TimeSpan.FromSeconds(4));
 		await Click(_dropdownViewInvoicePath);
-		Thread.Sleep(4000);
+		await Task.Delay(TimeSpan.FromSeconds(4));
 		await Click(_viewButtonPath);
-		Thread.Sleep(4000);
+		await Task.Delay(TimeSpan.FromSeconds(4));
 
 		var valueSearch = await GetValueString(_invoiceNumberText);
-		Thread.Sleep(4000);
+		await Task.Delay(TimeSpan.FromSeconds(4));
 
 		await Click(_closeButtonPath);
-		Thread.Sleep(8000);
+		await Task.Delay(TimeSpan.FromSeconds(8));
 		await Click(_menuPaymentPath);
-		Thread.Sleep(8000);
+		await Task.Delay(TimeSpan.FromSeconds(8));
 		await Click(_searchNumberPayment);
-		Thread.Sleep(3000);
+		await Task.Delay(TimeSpan.FromSeconds(3));
 		await SendKey(_searchInputPayment, valueSearch);
 
 		if (valueSearch is not null)
 			await SendKey(_searchInputPayment, valueSearch);
 		else
 			Console.WriteLine("Fail");
-		Thread.Sleep(4000);
+		await Task.Delay(TimeSpan.FromSeconds(4));
 
 		await Click(_searchButtonPayment);
 
-		Thread.Sleep(8000);
+		await Task.Delay(TimeSpan.FromSeconds(8));
 
 		var tableNumberPayment = await GetValueString(_tableNumberPayment);
 
-		Thread.Sleep(4000);
+		await Task.Delay(TimeSpan.FromSeconds(4));
 
 		if (valueSearch == tableNumberPayment)
 			Console.WriteLine("Pass");
@@ -161,8 +188,7 @@ public class SalesOfficeTest
 		await SendKey(_usernamePath, _username);
 		await SendKey(_passwordPath, _password);
 		await Click(_signInButtonPath);
-
-		Thread.Sleep(4000);
+		await Task.Delay(TimeSpan.FromSeconds(4));
 
 		//SendKey(wait, _selectSellerInputPath, _sellerName);
 		//Click(wait, _selectSellerPath);

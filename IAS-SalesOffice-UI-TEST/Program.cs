@@ -4,6 +4,7 @@ try
 {
 	Console.WriteLine("started");
 	var test = new SalesOfficeTest();
+	test.RunMultiTab(3);
 	Console.WriteLine("finished");
 }
 catch (Exception ex)
