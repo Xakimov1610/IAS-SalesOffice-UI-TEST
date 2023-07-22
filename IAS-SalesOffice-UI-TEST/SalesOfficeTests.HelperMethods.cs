@@ -14,11 +14,11 @@ public partial class SalesOfficeTests
         await Click(_signInButtonPath);
         await Task.Delay(TimeSpan.FromSeconds(7));
 
-        //SendKey(_selectSellerInputPath, _sellerName);
-        //Click(_selectSellerPath);
-        //Click(_selectButtonPath);
+        await SendKey(_selectSellerInputPath, _sellerName);
+        await Click(_selectSellerPath);
+        await Click(_selectButtonPath);
 
-        //Await Task.Delay(4000);
+        await Task.Delay(4000);
     }
 
     public Task Click(By elementPath)
