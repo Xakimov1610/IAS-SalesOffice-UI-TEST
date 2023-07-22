@@ -3,7 +3,7 @@
 try
 {
 	Console.WriteLine("started");
-	var test = new SalesOfficeTest();
+	var test = new SalesOfficeTests();
 	test.RunMultiTab(3);
 	Console.WriteLine("finished");
 }
