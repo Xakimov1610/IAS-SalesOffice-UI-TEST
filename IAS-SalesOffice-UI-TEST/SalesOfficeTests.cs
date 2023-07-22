@@ -132,6 +132,27 @@ public partial class SalesOfficeTests
 
 	#endregion
 
+	#region BSR Test Paths
+
+	private readonly By _menuBSRPath = By.XPath("/html/body/div[4]/div[2]/ul/li[6]/a");
+    private readonly By _exportExcelButton = By.XPath("/html/body/div[6]/div[3]/div[1]/div[1]/div/button");
+    private readonly By _distributionButton = By.XPath("/html/body/div[6]/div[3]/div[1]/div[1]/ul/li[2]/button");
+    private readonly By _returnButton = By.XPath("/html/body/div[6]/div[3]/div[1]/div[1]/ul/li[3]/button");
+    private readonly By _requestsButton = By.XPath("/html/body/div[6]/div[3]/div[1]/div[1]/ul/li[4]/button");
+    private readonly By _aquireDropdownView = By.XPath("/html/body/div[6]/div[3]/div[1]/div[2]/div[1]/div/div/div[2]/div[1]/div[2]/table/tbody/tr[1]/td[10]/div/div/button");
+    private readonly By _aquireButtonView = By.XPath("/html/body/div[6]/div[3]/div[1]/div[2]/div[1]/div/div/div[2]/div[1]/div[2]/table/tbody/tr[1]/td[10]/div/div/div/a");
+    private readonly By _aquireViewClose = By.XPath("/html/body/div[6]/div[3]/div[1]/div[2]/div[6]/div/div/div[2]/button");
+    private readonly By _returnRequestButton = By.XPath("/html/body/div[6]/div[3]/div[1]/div[2]/ul/a[2]");
+    private readonly By _returnRequestViewDropdown = By.XPath("/html/body/div[6]/div[3]/div[1]/div[2]/div[1]/div/div/div[2]/div[1]/div[2]/table/tbody/tr[1]/td[10]/div/div/button");
+    private readonly By _returnRequestViewButton = By.XPath("/html/body/div[6]/div[3]/div[1]/div[2]/div[1]/div/div/div[2]/div[1]/div[2]/table/tbody/tr[1]/td[10]/div/div/div/a");
+    private readonly By _returnRequestCloseButton = By.XPath("/html/body/div[6]/div[3]/div[1]/div[2]/div[6]/div/div/div[2]/button");
+    private readonly By _stateChangeButton = By.XPath("/html/body/div[6]/div[3]/div[1]/div[2]/ul/a[3]");
+    private readonly By _stateChangeViewDropdown = By.XPath("/html/body/div[6]/div[3]/div[1]/div[2]/div[1]/div/div/div[2]/div[1]/div[2]/table/tbody/tr[1]/td[8]/div/div/button");
+    private readonly By _stateChangeViewButton = By.XPath("/html/body/div[6]/div[3]/div[1]/div[2]/div[1]/div/div/div[2]/div[1]/div[2]/table/tbody/tr[1]/td[8]/div/div/div/a");
+    private readonly By _stateChangeCloseButton = By.XPath("/html/body/div[6]/div[3]/div[1]/div[2]/div[4]/div[2]/form/div/div[7]/button");
+
+	#endregion
+
 
 	#region Const Values
 
@@ -179,12 +200,12 @@ public partial class SalesOfficeTests
 
 	public async Task RunTests()
 	{
-		//edgeDriver.SwitchTo().Window(handle);
 		await InvoiceTest();
 		await TravelTest();
 		await DownloadPortfolioTest();
 		await PaymentTest();
 		await PolicyTest();
+		await BSRTest();
 		await Task.Delay(_mediumDelay);
 	}
 }
