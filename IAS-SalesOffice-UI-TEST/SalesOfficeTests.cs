@@ -203,7 +203,7 @@ public partial class SalesOfficeTests
 	#region Const Values
 
 	private const string _username = "oakrom";
-	private const string _password = "159753";
+	private const string _password = "123456789";
 	private const string _siteUrl = "https://sales.aic.uz";
 	private const int _waitingSecond = 20;
 	private const int _shortDelay = 4000;
