@@ -20,7 +20,7 @@ public partial class SalesOfficeTests
         await Task.Delay(4000);
         
         await Click(_allBankPayment_Path);
-        await Task.Delay(4000);
+        await Task.Delay(8000);
         
         await Click(_allPolicies_Path);
         await Task.Delay(4000);

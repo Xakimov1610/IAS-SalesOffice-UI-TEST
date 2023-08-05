@@ -232,7 +232,7 @@ public partial class SalesOfficeTests
 	public SalesOfficeTests()
 	{
 		edgeDriver = new EdgeDriver();
-		wait = new WebDriverWait(edgeDriver, TimeSpan.FromSeconds(120));
+		wait = new WebDriverWait(edgeDriver, TimeSpan.FromSeconds(35));
 	}
 
 	// public async Task RunMultiTab(int tabCount)
@@ -253,6 +253,7 @@ public partial class SalesOfficeTests
 
 	public async Task RunTests()
 	{
+		edgeDriver.Navigate().Refresh();
 		// await InvoiceTest();
 		// await TravelTest();
 		//await DownloadPortfolioTest();

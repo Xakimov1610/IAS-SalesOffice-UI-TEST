@@ -7,18 +7,52 @@ public partial class SalesOfficeTests
 {
     public async Task SignInToSystem(string url)
     {
-        edgeDriver.Navigate().GoToUrl(url);
+        try
+        {
+            edgeDriver.Navigate().GoToUrl(url);
 
-        await SendKey(_usernamePath, _username);
-        await SendKey(_passwordPath, _password);
-        await Click(_signInButtonPath);
-        await Task.Delay(TimeSpan.FromSeconds(7));
+            await SendKey(_usernamePath, _username);
+            await SendKey(_passwordPath, _password);
+            await Click(_signInButtonPath);
+            await Task.Delay(TimeSpan.FromSeconds(7));
 
-        await SendKey(_selectSellerInputPath, _sellerName);
-        await Click(_selectSellerPath);
-        await Click(_selectButtonPath);
+            await SendKey(_selectSellerInputPath, _sellerName);
+            await Task.Delay(4000);
+            await Click(_selectSellerPath);
+            await Click(_selectButtonPath);
 
-        await Task.Delay(4000);
+            await Task.Delay(4000);
+        }
+        catch (Exception e)
+        {
+            edgeDriver.Navigate().GoToUrl(url);
+
+            try
+            {
+                await SendKey(_usernamePath, _username);
+                await SendKey(_passwordPath, _password);
+                await Click(_signInButtonPath);
+                await Task.Delay(TimeSpan.FromSeconds(7));
+
+                await SendKey(_selectSellerInputPath, _sellerName);
+                await Task.Delay(4000);
+                await Click(_selectSellerPath);
+                await Click(_selectButtonPath);
+
+                await Task.Delay(4000);
+            }
+            catch (Exception ex)
+            {
+                await SendKey(_selectSellerInputPath, _sellerName);
+                await Task.Delay(4000);
+                await Click(_selectSellerPath);
+                await Click(_selectButtonPath);
+
+                await Task.Delay(4000);
+            }
+            
+        }
+        
     }
 
     public Task Click(By elementPath)
